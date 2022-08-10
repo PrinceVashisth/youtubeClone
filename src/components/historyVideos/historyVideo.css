@@ -1,0 +1,19 @@
+.historyVideos{
+    overflow-x: scroll;
+    display: flex;
+    flex: 11;
+    margin: 10px;
+    height: 380px;
+}
+
+.historyVideos::-webkit-scrollbar{
+  height: 5px;
+}
+
+.historyVideos::-webkit-scrollbar-thumb{
+  color: grey;
+}
+
+.historyVideos::-webkit-scrollbar-track{
+color: blue;
+}

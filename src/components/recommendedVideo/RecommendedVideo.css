@@ -1,0 +1,22 @@
+.recommendedVideo{
+    display: flex;
+}
+
+.recommendedimg img{
+    width: 200px;
+    height: 100px;
+}
+.recommendedVideoDesc{
+    margin-left: 10px;
+}
+
+.recommendedVideoTitle{
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.views,.time{
+    font-size: 12px;
+    color: grey;
+}

@@ -1,0 +1,7 @@
+.ProfileChannelSection{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 140px;
+    margin-top: 40px;
+}

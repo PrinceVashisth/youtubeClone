@@ -1,0 +1,113 @@
+.sidebar{
+    flex: 2;
+    overflow-y: scroll;
+    position:sticky;
+    top: 0px;
+    height: calc( 100vh - 50px );
+    background-color: rgb(255, 255, 255);
+    scroll-behavior: smooth;
+    scrollbar-color: rgb(234, 183, 183);
+}
+.sidebar::-webkit-scrollbar{
+    width: 7px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+background-color: rgb(202, 185, 185);
+}
+
+.sidebar::-webkit-scrollbar-track{
+background-color: #fff;
+}
+
+.Seperator{
+   margin: 0 10px;
+  background-color: rgb(214, 233, 211);
+}
+
+.ExploreList{
+    list-style-type: none;
+    padding: 5px;
+}
+.exploreListItem{
+    display: flex;
+    align-items: center;
+    padding:10px 20px;
+    cursor: pointer;
+}
+
+.exploreListItem:hover{
+    background-color: rgb(208, 203, 196);
+    transition: all ease 0.5s;
+    color: #fff;
+}
+
+.Icon{
+    width: 20px;
+    height: 20px;
+    padding-right: 15px;
+}
+
+.exploreIconName{
+    font-size: 1rem;
+}
+
+.headingSubscription{
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+
+.listSubscription{
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.itemSubscription{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.itemSubscription:hover{
+    background-color: rgb(208, 203, 196);
+    transition: all ease 0.5s;
+    color:#fff;
+}
+
+.subscriptionLogo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+.ExploreHeading{
+    margin-left: 20px;
+    font-size: 1.4rem;
+
+}
+
+.ExploringList,.userInformation{
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.ExploreListitem,.userInfo{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.ExploreItemName,.SubjectName{
+    font-size: 1rem;
+}
+
+.ExploreListitem:hover,.userInfo:hover{
+    background-color: rgb(208, 203, 196);
+    transition: all ease 0.5s;
+    color: #fff;
+}

@@ -1,0 +1,7 @@
+.profileNavbar{
+    position: sticky;
+    top: 0;
+    z-index: 123;
+    background-color: #fff;
+    padding: 10px 0;
+}

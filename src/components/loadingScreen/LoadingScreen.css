@@ -1,0 +1,57 @@
+.SkeletonVideo{
+  width: 20vw;
+  height: 300px;
+  margin: 30px 5px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.499);
+  animation: skeleton 0.5s ease infinite alternate;
+}
+
+@keyframes skeleton {
+  to{
+    opacity: 0.5;
+  }
+}
+
+.imgVideoSkeleton{
+  width: 20vw;
+  height: 200px;
+  background-color: rgb(175, 159, 159);
+}
+
+.timingSkeleton{
+  top: 160px;
+  right: 20px;
+  position: absolute;
+  background: grey;
+  color: #fff;
+  width: 50px;
+  height: 20px;
+}
+
+.channelImgSkeleton{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin:10px;
+  background-color: rgb(56, 53, 53);
+  cursor: pointer;
+}
+
+.titleOfVideoSkeleton{
+  width: 200px;
+  height: 20px;
+  background-color: rgb(56, 53, 53);
+}
+
+.labelNameSkeleton{
+  width: 120px;
+  height: 10px;
+  margin-bottom: 5px;
+  background-color:rgb(56, 53, 53);
+}
+.viewsSkeleton{
+  width: 90px;
+  height: 10px;
+  background-color:rgb(56, 53, 53);
+}

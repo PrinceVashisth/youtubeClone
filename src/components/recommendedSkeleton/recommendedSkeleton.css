@@ -1,0 +1,49 @@
+.recommendedSkeletonWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recommendedvideoSkeleton{
+    display: flex;
+    width: 400px;
+    height: 130px;
+    background-color: grey;
+    margin-bottom: 10px;
+    animation: skeleton ease-in 0.5s infinite alternate;
+}
+
+@keyframes skeleton{
+    to{
+       opacity: 0.5; 
+    }
+}
+
+.recommendedscreenSkeleton{
+   width: 150px;
+   height: 130px;
+   background-color: rgb(206, 192, 192);
+}
+.recommendedVideoInfoSkeleton{
+    width: 250px;
+    height: 130px;
+    background-color: rgb(96, 90, 97);
+}
+
+.recommendedVideoTitleSkeleton{
+    width: 70%;
+    height: 20px;
+    background-color: rgb(210, 232, 224);
+    margin:20px 30px;
+}
+.recommendedVideoDescSkeleton{
+    width: 50%;
+    height: 15px;
+    background-color:  rgb(210, 232, 224);
+    margin: 0 30px;  
+}
+.recommendedVideoCnameSkeleton{
+    width: 40%;
+    height: 8px;
+    background-color: rgb(210, 232, 224);
+    margin: 10px 30px;  
+}

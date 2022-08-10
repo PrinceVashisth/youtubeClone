@@ -1,0 +1,19 @@
+.likeVideoContainer{
+    flex: 11;
+    overflow-x: hidden;
+}
+
+.likeVideoWrapper{
+  display: flex;
+  overflow-x: scroll;
+}
+
+.likeVideoWrapper::-webkit-scrollbar{
+ height: 5px;
+}
+.likeVideoWrapper::-webkit-scrollbar{
+ color: aquamarine;
+}
+.likeVideoWrapper::-webkit-scrollbar-thumb{
+ color: aqua;
+}

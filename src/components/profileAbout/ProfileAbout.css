@@ -1,0 +1,30 @@
+.ProfileAbout{
+  display: flex;
+  background-color: lightgrey;
+  height: 330px;
+  padding: 30px;
+  color: grey;
+}
+
+.ProfileAboutContainer{
+    width: 60%;
+    margin-top: 30px;
+}
+
+.Channeldesc{
+   font-size: 1.4rem;
+   font-weight: 700;
+}
+
+.DescriptionChannel{
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.ProfileAboutStats{
+    width: 40%;
+    margin-top: 50px;
+    padding-left: 80px;
+    height: 100px;
+}

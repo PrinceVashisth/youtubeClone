@@ -1,0 +1,7 @@
+.MoviesContainer{
+    flex: 11;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    height: calc(100vh - 60px);
+}

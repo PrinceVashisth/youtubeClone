@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './pages/home/Home';
+
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes
+} from "react-router-dom";
+import Login from './pages/login/Login';
+import { useSelector } from 'react-redux';
+import Explore from './pages/ExplorePage/Explore';
+import Profile from './pages/profile/Profile';
+import VideoPlay from './pages/videoPlay/VideoPlay';
+import History from './pages/History/History';
+import LikeVideos from './pages/likeVideos/LikeVideos';
+import SubscriberVideos from './pages/SubscriberVideos/SubscriberVideos';
+import Catagory from './pages/Catagory/Catagory';
+
 
 function App() {
+  const user = useSelector((state)=>state.user.userInfo);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+<Router>
+    <Routes>
+        <Route path='/' element={<Home/>} />
+          <Route path="/Login" element={user?<Navigate to={'/'}/>:<Login/>} />
+          <Route path="/Explore" element={<Explore />} />
+          <Route path="/profile/:channelName" element={<Profile />} />
+          <Route path="/video/:id" element={<VideoPlay />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/like" element={<LikeVideos />} />
+          <Route path="/subscriberVideo" element={<SubscriberVideos />} />
+          <Route path="/Explore/:catagory" element={<Catagory />} />
+
+    </Routes>
+ </Router>
+  </>
   );
 }
 

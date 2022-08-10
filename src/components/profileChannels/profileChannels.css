@@ -1,0 +1,43 @@
+.ProfileChannel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 190px;
+    margin-bottom: 20px;
+}
+
+.ProfileChannelImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.ProfileChannelImg img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.ProfilechannelName{
+   font-size: 12px;
+   margin: 5px 0;
+   font-weight: 700;
+}
+
+.ProfilechannelSubscribers{
+     color: grey;
+     font-size: 10px;
+}
+
+.ProfileChannelSubscribers{
+   margin-top: auto;
+   margin-bottom: 10px;
+   border: none;
+   padding: 3px 6px;
+   color: gray;
+   background-color: lightgrey;
+   font-weight: 700;
+   cursor: pointer;
+}
+

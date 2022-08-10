@@ -1,0 +1,13 @@
+.SubscriberContainer{
+    height: calc(100vh - 50px );
+    flex: 11;
+    overflow-y: scroll;
+}
+.SubscriberWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.SubscriberContainer::-webkit-scrollbar{
+    width: 0px;
+}

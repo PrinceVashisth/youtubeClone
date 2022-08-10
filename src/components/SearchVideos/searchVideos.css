@@ -1,0 +1,17 @@
+.SearchItem {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    font-weight: 600;
+    background-color: grey;
+    color: black;
+    transition: all ease 1s;
+}
+.SearchItem a{
+    color: black;
+}
+.SearchItem:hover{
+    background-color: rgb(233, 207, 207);
+}
+.SearchItem a:hover{
+    color: #fff;
+}
