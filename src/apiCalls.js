@@ -4,8 +4,10 @@ export const LoginUser = async(credencials,dispatch)=>{
     dispatch(Initialstage());
     try {
         const user = await axios.post('/UserAuth/login',credencials);
-        if(user.data !== "Wrong Email")
+        if(user.data !== "Wrong Email"){
+            localStorage.setItem("User", JSON.stringify(user.data));
             dispatch(fulfilled(user.data)); 
+        }
          else{
              dispatch(rejected);
              alert('Wrong Email');   

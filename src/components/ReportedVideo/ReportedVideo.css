@@ -2,7 +2,7 @@
     flex: 11;
     display: flex;
     overflow-x: scroll;
-    height: 400px;
+    height: 450px;
 }
 .ReportedVideo::-webkit-scrollbar{
     width: 5px;

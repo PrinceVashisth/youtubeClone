@@ -11,6 +11,7 @@ import axios from 'axios';
 import SearchVideos from '../SearchVideos/SearchVideos';
 export default function Navbar() {
 const user = useSelector((state)=>state.user.userInfo);
+console.log(user);
 const [SearchItem,SetSearchedItem]  = useState("");
 const [Videos,SetVideos] = useState([]);
 const inputField=(e)=>{
@@ -29,7 +30,12 @@ useEffect(()=>{
   fetchVideos();
 },[SearchItem]);
 const UserPresent = ()=>{
-  const PF = 'http://localhost:3000/'
+  const PF = 'http://localhost:3000/';
+const logoutHandeller=()=>{
+  localStorage.setItem("User",null);
+  window.location.reload();
+}
+
   return(
   <>
   <div className="navIcons">
@@ -42,12 +48,14 @@ const UserPresent = ()=>{
               <div className="navitem">
                  <MdNotificationsActive className='icon'/>
               </div>
-            </div>
+  </div>
             <Link to={`/profile/${user.name}`} style={{textDecoration:'none'}}>
             <div className="activeUser">
               <img src ={`${PF}${user.profilePhoto}`} alt="" className="userProfile" />
             </div>
             </Link>
+            <span style={{"marginLeft":"10px","color":"#ce0000","fontWeight":"700","cursor":"pointer"}} onClick={logoutHandeller}>LogOut</span>
+
   </>)          
 }
 const UserAbsentRightBar =()=>{

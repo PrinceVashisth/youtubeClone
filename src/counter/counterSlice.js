@@ -1,9 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+function UserName() {
+  
+  let value = JSON.parse(localStorage.getItem("User"));
+  if(value){
+    return JSON.parse(localStorage.getItem("User"));
+  }
+  return null;
+  
+}
+
 export const counterSlice = createSlice({
   name: 'user',
   initialState: {
-    userInfo:null,
+    userInfo:UserName(),
     pending:false,
     error:false
   },

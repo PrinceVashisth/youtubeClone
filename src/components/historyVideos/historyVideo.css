@@ -4,6 +4,9 @@
   overflow-x: scroll;
   flex: 10;
 }
+.HistoryContainer::-webkit-scrollbar{height: 1px;}
+.HistoryContainer::-webkit-scrollbar-thumb{background-color: aqua;}
+.HistoryContainer::-webkit-scrollbar-track{background-color: #fff;}
 .DeleteAllVideoHistory{
   margin-top: 5px;
   margin-left: auto;
@@ -26,11 +29,12 @@
     overflow-x: scroll;
     display: flex;
     margin: 0px 10px;
-    height: 380px;
+    height: 450px;
 }
 
+
 .historyVideos::-webkit-scrollbar{
-  height: 5px;
+  height: 1px;
 }
 
 .historyVideos::-webkit-scrollbar-thumb{
