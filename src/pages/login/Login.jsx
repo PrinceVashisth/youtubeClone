@@ -19,7 +19,7 @@ setchoice(false);
     <div className="LoginWrapper">
           <div className="choiceBtn">
           <div className="buttons">
-            <button className="loginForm" onClick={LoginSelect}>Login</button>
+            <button className="loginForm" onClick={LoginSelect} >Login</button>
             <button className="loginRegisterForm" onClick={RegisterSelect}>Register</button>
           </div>
           </div>

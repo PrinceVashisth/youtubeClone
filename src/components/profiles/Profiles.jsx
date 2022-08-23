@@ -5,20 +5,20 @@ import BottomProfile from "../BottomProfile/BottomProfile";
 import './Profiles.css';
 export const ProfileChannel = ({channelName})=>{
     const user = useSelector((state)=>state.user.userInfo); 
-
     const [channel,setChannel] = useState([]);
     const [Show,SetShow] = useState(true);
+    const [Subscribebtn,SetSubscribeBtn] = useState(false);
      useEffect(()=>{
        const fetchChannel=async()=>{
            const res = await axios.get(`/channel?name=${channelName}`);
            setChannel(res.data);
-           console.log(res.data);
+           SetSubscribeBtn(user?res.data.subscribers.includes(user._id)?true:false:false);
            SetShow(false);
        }
        fetchChannel();
-    },[channelName]);
+    },[channelName,Subscribebtn]);
 
-const subscriberHandeller=async()=>{ await axios.put(`/user/${channel._id}`,{userId:user._id}); }     
+const subscriberHandeller=async()=>{ await axios.put(`/user/${channel._id}`,{userId:user._id}); SetSubscribeBtn(!Subscribebtn) }     
 
 const ProfileHeader =()=>{
   return(
@@ -31,9 +31,9 @@ const ProfileHeader =()=>{
   <img src={`${PF}${channel.channelImg}`} alt="" className='ProfileImg'/>
        <div className="Aboutchannel">
        <div className="channelName">{channelName}</div>
-       <div className="subscribers">{ Show?" ":channel.subscribers.length}  subscribers</div>
+       <div className="subscribers">{ Show?" ":channel.subscribers.length}  subscribers </div>
        </div>
-    {user?(user.name!==channelName)?<button onClick={subscriberHandeller} className="SubscribersBtn">Subscribe</button>:null:null}
+    {user?(user.name!==channelName)?<button onClick={subscriberHandeller} className="SubscribersBtn">{Subscribebtn?"Subscribed":"subscribe"}</button>:null:null}
   </div>
 </div>
 </>
@@ -45,7 +45,6 @@ const ProfileNavbar = ()=>{
   const ProfileBottomHandeller=(e)=>{
      SetValue(e.target.innerHTML);
   }
-  console.log(Value);
   return(
     <>
           <div className="profileNavbar">

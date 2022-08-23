@@ -1,8 +1,31 @@
+.HistoryContainer{
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  flex: 10;
+}
+.DeleteAllVideoHistory{
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: space-between;
+  color: brown;
+  font-weight: 700;
+  font-size: 1rem;
+  font-style: italic;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
 .historyVideos{
     overflow-x: scroll;
     display: flex;
-    flex: 11;
-    margin: 10px;
+    margin: 0px 10px;
     height: 380px;
 }
 

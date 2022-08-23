@@ -4,11 +4,12 @@ export const LoginUser = async(credencials,dispatch)=>{
     dispatch(Initialstage());
     try {
         const user = await axios.post('/UserAuth/login',credencials);
-        if(user.data === "Wrong Email")
-        dispatch(rejected());
-        else{
+        if(user.data !== "Wrong Email")
             dispatch(fulfilled(user.data)); 
-        }   
+         else{
+             dispatch(rejected);
+             alert('Wrong Email');   
+         }
     } catch {
         dispatch(rejected());
     }
@@ -19,6 +20,7 @@ export const RegisterUser = async(credencials,dispatch)=>{
     try{
          await axios.post('/UserAuth',credencials);
          dispatch(fulfilled());
+         alert("USer Sucessfully register..........");
     }catch{
         dispatch(rejected());
     }

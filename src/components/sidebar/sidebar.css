@@ -1,5 +1,6 @@
 .sidebar{
     flex: 2;
+    min-width: 200px;
     overflow-y: scroll;
     position:sticky;
     top: 0px;

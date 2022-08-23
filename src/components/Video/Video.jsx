@@ -21,6 +21,29 @@ const ViewsHandeller=async()=>{
   user ?await axios.put(`/user/video/${props._id}`,{userId:user._id}): await axios.put(`/user/video/${props._id}`,{userId:user});
 }
 
+
+const AddLibraryHandeller=async()=>{
+  await axios.post(``);
+}
+
+
+const ReportHandeller=async()=>{
+ const res = await axios.put(`user/report/video/${props._id}`,{userId:user._id});
+ console.log(res.data);
+}
+
+
+const shareHandeller=async()=>{
+  await axios.post(``);
+}
+
+
+const WatchHandeller=async()=>{
+  await axios.post(``);
+}
+
+
+
  const PF = 'http://localhost:3000/';
   return (
     <>
@@ -35,12 +58,12 @@ const ViewsHandeller=async()=>{
           </span>
           <div className="MoreDetailsInVideo">
           <FiMoreVertical className='moreDetails' />
-          <div className="VideoOptions" >
-        <Link to={`/video/${props._id}`}><div className="optionItem">See this Video</div></Link> 
-        <Link to={""}> <div className="optionItem">Report A Video</div></Link>   
-        <Link to={""}> <div className="optionItem">Share A Video</div></Link>   
-        <Link to={""}> <div className="optionItem">Add To Watch Later</div></Link>   
-          </div>
+      {user? <div className="VideoOptions" >
+        <div className="optionItem" onClick={AddLibraryHandeller}>All to Library</div>
+        <div className="optionItem" onClick={ReportHandeller}>Report A Video</div>   
+        <div className="optionItem" onClick={shareHandeller}>Share A Video</div>   
+        <div className="optionItem" onClick={WatchHandeller}>Add To Watch Later</div>
+          </div>:null}
           </div>
           
           </div>

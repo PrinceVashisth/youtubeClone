@@ -14,42 +14,9 @@ import { Link } from 'react-router-dom';
 export default function Sidebar() {
 const user = useSelector((state)=>state.user.userInfo);
 
-
-  return (
-    <div className='sidebar'>
-      <div className="sidebarWrapper">
-      <ul className="ExploreList">
-      <Link to={'/'} style={{textDecoration:'none',color:'black'}}>
-        <li className="exploreListItem">
-          <AiFillHome className='Icon'/>
-          <span className="exploreIconName">Home</span>
-        </li>
-      </Link>
-      
-      <Link to={'/Explore'}  style={{textDecoration:'none',color:'black'}}>
-        <li className="exploreListItem">
-          <MdOutlineExplore className='Icon'/>
-          <span className="exploreIconName">Explore</span>
-        </li>
-      </Link>
-      <Link to={'/Shorts'}  style={{textDecoration:'none',color:'black'}}>
-        <li className="exploreListItem">
-          <CgMusic className='Icon'/>
-          <span className="exploreIconName">Shorts</span>
-        </li>
-        </Link>
-      <Link to={'/Subscription'}  style={{textDecoration:'none',color:'black'}}>
-        <li className="exploreListItem">
-          <MdSubscriptions className='Icon'/>
-          <span className="exploreIconName">Subscription</span>
-        </li>
-        </Link>
-        </ul>
-
-{
- user?
- <>
-        <hr className='Seperator'/>
+const UserPresent = ()=>{
+  return(
+    <>
         <ul className="ExploreList">
       <Link to={`/subscriberVideo`} style={{textDecoration:'none' , color:'black'}}>
         <li className="exploreListItem">
@@ -95,8 +62,7 @@ const user = useSelector((state)=>state.user.userInfo);
        )) }
         </ul>
       </div>
-</>:null
-}
+
       <hr className='Seperator'/>
        <div className="Explore">
        <span className='ExploreHeading'>Explore</span>
@@ -140,17 +106,65 @@ const user = useSelector((state)=>state.user.userInfo);
           <FiSettings className='Icon'/>
           <span className='SubjectName'>Settings</span>
         </li>
+    <Link to={'/Reports'} style={{textDecoration:'none',color:'black'}}>    
         <li className="userInfo">
           <VscReport className='Icon'/>
           <span className='SubjectName'>Reports</span>
         </li>
+    </Link>   
         <li className="userInfo">
           <IoMdHelpCircleOutline className='Icon'/>
           <span className='SubjectName'>Help</span>
         </li>
       </ul>
      </div>
+    </>
+  )
+}
+const UserAbsent = ()=>{
+  return(
+    <>
+     <div style={{width:"100%",display:"flex",justifyContent:'center',marginTop:"20px"}}>
+    <Link to={'/Login'}>
+     <button style={{fontSize:'15px',padding:"7px 10px",fontWeight:"600",color:"white",backgroundColor:"red",borderRadius:"5px",border:"none",cursor:"pointer"}}>Sign in</button>
+    </Link> 
+     </div>
+    </>
+  )
+}
 
+  return (
+    <div className='sidebar'>
+      <div className="sidebarWrapper">
+      <ul className="ExploreList">
+      <Link to={'/'} style={{textDecoration:'none',color:'black'}}>
+        <li className="exploreListItem">
+          <AiFillHome className='Icon'/>
+          <span className="exploreIconName">Home</span>
+        </li>
+      </Link>
+      
+      <Link to={'/Explore'}  style={{textDecoration:'none',color:'black'}}>
+        <li className="exploreListItem">
+          <MdOutlineExplore className='Icon'/>
+          <span className="exploreIconName">Explore</span>
+        </li>
+      </Link>
+      <Link to={'/Shorts'}  style={{textDecoration:'none',color:'black'}}>
+        <li className="exploreListItem">
+          <CgMusic className='Icon'/>
+          <span className="exploreIconName">Shorts</span>
+        </li>
+        </Link>
+      <Link to={'/Subscription'}  style={{textDecoration:'none',color:'black'}}>
+        <li className="exploreListItem">
+          <MdSubscriptions className='Icon'/>
+          <span className="exploreIconName">Subscription</span>
+        </li>
+        </Link>
+        </ul>
+        <hr className='Seperator'/>
+      {user?<UserPresent/>:<UserAbsent/>}
       </div>
     </div>  
   )

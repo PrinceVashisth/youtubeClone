@@ -13,7 +13,6 @@ export default function ProfileChannelSection() {
    const fetchUserChannels = async()=>{
       const res = await axios.get(`/user/getAllChannels/${channelName}`);
       SetChannel(res.data);
-      console.log(res.data);
       SetSkeleton(false);
    }
    fetchUserChannels();

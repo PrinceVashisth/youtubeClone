@@ -2,7 +2,7 @@
 .video{
     width: 300px;
     height: 300px;
-    margin: 30px 10px;
+    margin: 30px 5px;
     position: relative;
   }
   
@@ -50,16 +50,13 @@
   transition: all ease 0.5s;
   visibility: visible;
  }
- 
-.VideoOptions a{
-  text-decoration: none;
-  color: rgb(218, 193, 193); 
-}
 
  .optionItem{
     padding: 8px 0;
+    color: antiquewhite;
+    cursor: pointer;
  }
-.VideoOptions a:hover{
+.VideoOptions .optionItem:hover{
   transition: all ease 0.5s;
   background-color: blueviolet;
   color: #fff;

@@ -20,7 +20,7 @@ useEffect(()=>{
     setSkeleton(false);
   } 
   fetchLikeVideo();
-},[user,Skeleton,video]);
+},[user]);
 
   return (
     <>

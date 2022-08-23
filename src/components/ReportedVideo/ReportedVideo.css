@@ -1,0 +1,15 @@
+.ReportedVideo{
+    flex: 11;
+    display: flex;
+    overflow-x: scroll;
+    height: 400px;
+}
+.ReportedVideo::-webkit-scrollbar{
+    width: 5px;
+}
+.ReportedVideo::-webkit-scrollbar-thumb{
+    color: aqua;
+}
+.ReportedVideo::-webkit-scrollbar-track{
+    color: aquamarine;
+}

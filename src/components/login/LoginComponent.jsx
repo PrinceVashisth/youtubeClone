@@ -31,7 +31,7 @@ export default function LoginComponent() {
       <form className='Loginform' onSubmit={LoginHandeller} >
         <input type="email" placeholder='Enter Your Email' ref={email} className="inputfield" required/>
         <input type="password" placeholder='Enter Your Password' ref={password} className="inputfield" required />
-        <button type="submit" className='loginbtn'>{user.pending? "Loading" : "Login" }</button>
+        <button type="submit" className='loginbtn' disabled={user.pending}>{user.pending? "Loading" : "Login" }</button>
       </form>
     </>
   )
