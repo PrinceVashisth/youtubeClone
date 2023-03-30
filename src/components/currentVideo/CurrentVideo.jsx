@@ -9,6 +9,7 @@ import { GrDislike, GrLike } from 'react-icons/gr';
 import {GoReport } from 'react-icons/go';
 export default function CurrentVideo({Video}){
   const user = useSelector((state)=>state.user.userInfo);
+  const [Playing,setPlaying] = useState(false);
 const [Channel,setChannel] = useState({});
 const [subscriber,setSubscriber]=useState(false);
 const [subscriberbtn,setSubscriberbtn]=useState(false);
@@ -21,8 +22,9 @@ useEffect(()=>{
      setSubscriberbtn(user?res.data.subscribers.includes(user._id)?true:false:false);
     }
   fetchChannel();
+  
 },[Video,subscriberbtn]);
-
+console.log(Video);
 // Handellers
 const SubscribeHandeller = async()=>{
      await axios.put(`/user/${Channel._id}`,{userId:user._id});
@@ -34,16 +36,16 @@ const LikeHandeller=async()=>{
 const ReportsHandeller=async()=>{
   await axios.put(`/user/report/video/${Video._id}`,{userId:user._id});
 }
-const PF = 'http://localhost:3000/';
+
 const likeBtn={
   color:'red'
 }
-
   return (
-    <>
-                  <img src={`${PF}${Video.video}`} className='VideoPlay' alt=''/>
-            <div className="controlbar">
-            </div>      
+    <>          
+            <video width="1000" height="500" controls autoPlay="true" key={Video._id} >
+                  <source src={`${Video.video}`} type="video/mp4"/>
+            </video>
+           
             <div className="videoBar">
                 <div className="currVideoTitle">{Video.title}</div>
                 <span className="currentVideoViews">{Video.views.length} views </span>
@@ -54,7 +56,7 @@ const likeBtn={
             {
                 subscriber?
                 <div className="channelInfo">
-                     <Link to={`/profile/${Channel.channelName}`} > <img src={`${PF}assets/${Channel.channelImg}`} alt="" className='Vchannelimg' /> </Link>   
+                     <Link to={`/profile/${Channel.channelName}`} > <img src={`${Channel.channelImg}`} alt="" className='Vchannelimg' /> </Link>   
                         <div className="cinfo">
                             <div className="cname">{Channel.channelName}</div>
                             <div className="csubsnum">{Channel.subscribers.length} Subscribers</div>
@@ -62,7 +64,7 @@ const likeBtn={
             {
               user?     
                         <div className="SubscribeIt">
-                            <button onClick={SubscribeHandeller} >{subscriberbtn?"subscribed":"subscribe"}</button>
+                            <button onClick={SubscribeHandeller}>{subscriberbtn?"subscribed":"subscribe"}</button>
                         </div>
               :null
             }

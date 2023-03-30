@@ -1,4 +1,3 @@
-import './App.css';
 import Home from './pages/home/Home';
 
 import {
@@ -22,7 +21,6 @@ import ReportedVideos from './pages/ReportsVideos/ReportedVideos';
 function App() {
   const user = useSelector((state)=>state.user.userInfo);
   return (
-  <>
 <Router>
     <Routes>
         <Route path='/' element={<Home/>} />
@@ -38,7 +36,6 @@ function App() {
             
     </Routes>
  </Router>
-  </>
   );
 }
 

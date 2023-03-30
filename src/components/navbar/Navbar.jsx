@@ -9,15 +9,19 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import SearchVideos from '../SearchVideos/SearchVideos';
+
+
 export default function Navbar() {
+
 const user = useSelector((state)=>state.user.userInfo);
-console.log(user);
 const [SearchItem,SetSearchedItem]  = useState("");
 const [Videos,SetVideos] = useState([]);
-const inputField=(e)=>{
-  SetSearchedItem(e.target.value);
+const [toggle,setToggle] = useState(false);
+const inputField=(e)=>{SetSearchedItem(e.target.value);}
 
-}
+const actionPerform =()=>{
+   setToggle(!toggle);    
+} 
 useEffect(()=>{
   const fetchVideos = async()=>{
     if(SearchItem !== ""){
@@ -28,7 +32,7 @@ useEffect(()=>{
     }
   }
   fetchVideos();
-},[SearchItem]);
+},[SearchItem,toggle]);
 const UserPresent = ()=>{
   const PF = 'http://localhost:3000/';
 const logoutHandeller=()=>{
@@ -45,13 +49,14 @@ const logoutHandeller=()=>{
               <div className="navitem">
                  <MdCreate className='icon'/>
               </div>
+              
               <div className="navitem">
                  <MdNotificationsActive className='icon'/>
               </div>
   </div>
             <Link to={`/profile/${user.name}`} style={{textDecoration:'none'}}>
             <div className="activeUser">
-              <img src ={`${PF}${user.profilePhoto}`} alt="" className="userProfile" />
+              <img src ={`${user.profilePhoto}`} alt="" className="userProfile" />
             </div>
             </Link>
             <span style={{"marginLeft":"10px","color":"#ce0000","fontWeight":"700","cursor":"pointer"}} onClick={logoutHandeller}>LogOut</span>
@@ -74,7 +79,7 @@ const UserAbsentRightBar =()=>{
     <div className='navbar'>
         <div className="navbarWrapper">
           <div className="navbarLeft">
-           <VscThreeBars  rotate={90} className="ToggleIcon" size={25} />
+           <VscThreeBars  rotate={90} className="ToggleIcon" size={25} onClick={actionPerform} />
               <ImYoutube2 className='logoImg'/>
           </div>
           <div className="navbarCenter">

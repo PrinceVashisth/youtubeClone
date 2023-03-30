@@ -10,9 +10,18 @@ import Subscribers from '../subscribers/Subscribers';
 
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useEffect,useState } from 'react';
 
 export default function Sidebar() {
-const user = useSelector((state)=>state.user.userInfo);
+  const [toggle, setToggle] = useState(false); 
+  const toggleing =()=>{
+    setToggle(!toggle);
+  } 
+  console.log(toggle+"Clicked");
+let user = JSON.parse(localStorage.getItem('User'));
+useEffect(()=>{
+  user = JSON.parse(localStorage.getItem('User')); 
+},[user,toggle]); 
 
 const UserPresent = ()=>{
   return(
@@ -132,9 +141,9 @@ const UserAbsent = ()=>{
     </>
   )
 }
-
   return (
-    <div className='sidebar'>
+    <div className={toggle?"sidebar active":"sidebar"}>
+     <div className="toggleIcon" onClick={toggleing}></div>
       <div className="sidebarWrapper">
       <ul className="ExploreList">
       <Link to={'/'} style={{textDecoration:'none',color:'black'}}>
@@ -143,7 +152,6 @@ const UserAbsent = ()=>{
           <span className="exploreIconName">Home</span>
         </li>
       </Link>
-      
       <Link to={'/Explore'}  style={{textDecoration:'none',color:'black'}}>
         <li className="exploreListItem">
           <MdOutlineExplore className='Icon'/>

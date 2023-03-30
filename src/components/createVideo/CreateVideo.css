@@ -1,0 +1,58 @@
+.VideoCreate{
+  display: flex;
+  flex-direction: column;
+margin-left: auto;
+margin-right: 50px;
+position: relative;
+}
+
+.videoPopUp{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  background-color: #2a3838;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: aliceblue;
+  top: 50px;
+  z-index: 999;
+}
+
+.creatingBtn{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  background-color: #58a9a9;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: aliceblue;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.videoPopUp form{
+display: flex;
+width: 80%;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.videoPopUp form input{
+   margin: 5px 0px;
+   outline: none;
+   border: none;
+   font-family: sans-serif;
+   background-color: rgb(226, 221, 221);
+   color: rgb(175, 175, 214);
+   padding: 5px 10px;
+   font-size: 1.3rem;
+   width: 100%;
+}
+
+.VideoToggler{
+  top: -1000px;
+}

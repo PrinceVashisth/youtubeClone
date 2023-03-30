@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import ChannelSkeleton from '../channelSkeleton/ChannelSkeleton';
 import ProfileChannels from '../profileChannels/ProfileChannels';
+
 export default function ProfileChannelSection() {
   const channelName = useParams().channelName;
   const [Skeleton,SetSkeleton] = useState(true);

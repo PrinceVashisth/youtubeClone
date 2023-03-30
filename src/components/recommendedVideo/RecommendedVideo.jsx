@@ -6,7 +6,6 @@ import { format } from 'timeago.js';
 import { useSelector } from 'react-redux';
 export default function RecommendedVideo({video}) {
 const user = useSelector((state)=>state.user.userInfo);  
-const PF = 'http://localhost:3000/';
 const [channel,setChannel]= useState([]);
 useEffect(()=>{
     const fetchChannel = async()=>{
@@ -30,7 +29,7 @@ const viewHandeller = async()=>{
     <>
       <div className="recommendedVideo" onClick={viewHandeller}>
         <div className="recommendedimg">
-          <img src={`${PF}${video.thumbnail}`} alt="" />
+          <img src={`${video.thumbnail}`} alt="" />
         </div>
         <div className="recommendedVideoDesc">
         <div className="recommendedVideoTitle">{video.title}</div>

@@ -5,10 +5,10 @@ import './video.css';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {format} from 'timeago.js';
+import ReactPlayer from 'react-player';
 export default function Video({props}) {
 const user = useSelector((state)=>state.user.userInfo);  
 const [channel,setChannel]= useState({});
-
   useEffect(()=>{
     const FetchChennel=async()=>{
      const res = await axios.get(`/channel?userId=${props.userId}`);
@@ -44,15 +44,14 @@ const WatchHandeller=async()=>{
 
 
 
- const PF = 'http://localhost:3000/';
   return (
     <>
          <div className="video">
-     <Link to={`/video/${props._id}`}> <img src={`${PF}${props.video}`} alt="" className="imgVideo"  onClick={ViewsHandeller}/> </Link>
+     <Link to={`/video/${props._id}`}> <img src={`${props.thumbnail}`} alt="" className="imgVideo"  onClick={ViewsHandeller}/> </Link>
         <span className="timing">2:30</span>
         <div className="videoDesc">
           <div className="descTop">
-          <img src={`${PF}assets/${channel.channelImg}`} alt="" className="channelImg" />
+          <img src={`${channel.channelImg}`} alt="" className="channelImg" />
           <span className="titleOfVideo">
             {props.title}
           </span>

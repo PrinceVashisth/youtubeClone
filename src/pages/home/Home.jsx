@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Videos from '../../components/videos/Videos';
@@ -6,9 +7,9 @@ import './home.css';
 function Home() {
   return (
     <>
-        <Navbar/>
+        <Navbar />
         <div className="mainContent">
-        <Sidebar/>
+        <Sidebar />
         <Videos />
         </div>
     </>

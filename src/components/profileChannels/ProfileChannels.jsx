@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './profileChannels.css';
 
 export default function ProfileChannels({channel}) {
@@ -5,7 +6,9 @@ export default function ProfileChannels({channel}) {
   return (
     <div className='ProfileChannel'>
        <div className="ProfileChannelImg">
-        <img src={`${PF}${channel.channelImg}`} alt="" />
+       <Link to={`/profile/${channel.channelName}`}>
+            <img src={`${channel.channelImg}`} alt="" />
+       </Link>
        </div>
        <div className="ProfilechannelName">{channel.channelName}</div>
        <div className="ProfilechannelSubscribers">{channel.subscribers.length} Subscribers</div>
