@@ -3,21 +3,22 @@
   flex-direction: column;
 margin-left: auto;
 margin-right: 50px;
-position: relative;
 }
 
-.videoPopUp{
+.videoPopUp {
   position: absolute;
   display: flex;
   flex-direction: column;
   padding-right: 10px;
-  background-color: #2a3838;
+  background-color: darkseagreen;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  color: aliceblue;
-  top: 50px;
+  width: 50%;
+  color: darkslategray;
+  top: 30%;
+  left: 30%;
   z-index: 999;
+  transition: all ease 0.5s;
 }
 
 .creatingBtn{
@@ -38,21 +39,35 @@ display: flex;
 width: 80%;
 flex-direction: column;
 justify-content: center;
-
+align-items: center;
 }
 
-.videoPopUp form input{
-   margin: 5px 0px;
-   outline: none;
-   border: none;
-   font-family: sans-serif;
-   background-color: rgb(226, 221, 221);
-   color: rgb(175, 175, 214);
-   padding: 5px 10px;
-   font-size: 1.3rem;
-   width: 100%;
+.videoPopUp form input {
+  margin: 5px 0px;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+  background-color: rgb(38 38 38);
+  color: rgb(230 230 255);
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .VideoToggler{
   top: -1000px;
+  transition: all ease 0.5s;
+}
+
+#submitbtn{
+  cursor: pointer;
+}
+#submitbtn:hover{
+  background-color: green;
+  transition: all ease 0.5s;
+}
+
+.disabled{
+  cursor: not-allowed;
 }

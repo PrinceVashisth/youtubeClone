@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './profileChannels.css';
 
 export default function ProfileChannels({channel}) {
-    const PF ='http://localhost:3000/assets/';
   return (
     <div className='ProfileChannel'>
        <div className="ProfileChannelImg">

@@ -34,7 +34,6 @@ useEffect(()=>{
   fetchVideos();
 },[SearchItem,toggle]);
 const UserPresent = ()=>{
-  const PF = 'http://localhost:3000/';
 const logoutHandeller=()=>{
   localStorage.setItem("User",null);
   window.location.reload();
