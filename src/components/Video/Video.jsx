@@ -28,7 +28,7 @@ const AddLibraryHandeller=async()=>{
 
 
 const ReportHandeller=async()=>{
- const res = await axios.put(`user/report/video/${props._id}`,{userId:user._id});
+ const res = await axios.put(`/user/report/video/${props._id}`,{userId:user._id});
  console.log(res.data);
 }
 

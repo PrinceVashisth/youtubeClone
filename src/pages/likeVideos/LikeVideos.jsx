@@ -14,7 +14,7 @@ const [video,setVideo] = useState([]);
 const [Skeleton,setSkeleton] = useState(true);
 useEffect(()=>{
   const fetchLikeVideo = async()=>{
-    const res = await axios.get(` videos/like/${user._id}`);
+    const res = await axios.get(`/videos/like/${user._id}`);
     const Data = [...res.data,...res.data,...res.data,...res.data,...res.data,...res.data];
     setVideo(Data);
     console.log(Data);

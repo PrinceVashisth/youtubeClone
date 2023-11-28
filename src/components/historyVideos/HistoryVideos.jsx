@@ -15,7 +15,7 @@ export default function HistoryVideos() {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`videos/history/${user._id}`);
+      const res = await axios.get(`/videos/history/${user._id}`);
       SetVideo(res.data);
       console.log(res.data);
       setSkeleton(false);
@@ -23,7 +23,7 @@ export default function HistoryVideos() {
     fetchVideos();
   }, [user, refresh]);
   const DeleteHandeller = async () => {
-    await axios.put(`user/video/remove/removeAll`, { userId: user._id });
+    await axios.put(`/user/video/remove/removeAll`, { userId: user._id });
     SetRefresh(!refresh);
   };
   return (

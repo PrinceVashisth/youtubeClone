@@ -45,7 +45,7 @@ export default function CreateVideo({ id }) {
       thumbnail: img,
       video: videoUrl,
     };
-    await axios.post(` videos/${id}`, Data);
+    await axios.post(`/videos/${id}`, Data);
     setDisabled(false);
   };
 
