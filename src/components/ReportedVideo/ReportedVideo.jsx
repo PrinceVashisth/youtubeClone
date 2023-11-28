@@ -12,7 +12,7 @@ export default function ReportedVideo() {
  useEffect(()=>{
    SetSkeleton(true);
     const fetchReportedVideos =async()=>{
-     const res = await axios.get(`/user/seeReports/Videos/${user._id}`);
+     const res = await axios.get(` user/seeReports/Videos/${user._id}`);
      setVideos(res.data);
      SetSkeleton(false);
     } 
@@ -21,7 +21,6 @@ export default function ReportedVideo() {
   return(
     <>
       <div className="ReportedVideo">
-      
        {Skeleton?<LoadingScreen/>:Videos.map((V)=>(<Video key={V._id} props={V}/>))}
       </div>    
     </>

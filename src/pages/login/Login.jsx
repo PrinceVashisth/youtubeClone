@@ -17,13 +17,11 @@ setchoice(false);
     return (
     <div className='Login'>
     <div className="LoginWrapper">
-          <div className="choiceBtn">
-          <div className="buttons">
-            <button className="loginForm" onClick={LoginSelect} >Login</button>
-            <button className="loginRegisterForm" onClick={RegisterSelect}>Register</button>
-          </div>
-          </div>
           <div className="userForm">
+          <div className="buttons">
+          <button className={choice?"Active":"true"} onClick={LoginSelect} >Login</button>
+          <button className={choice?"true":"Active"} onClick={RegisterSelect}>Register</button>
+        </div>
            {choice?<LoginComponent/>:<Register/>}   
           </div>
       </div>

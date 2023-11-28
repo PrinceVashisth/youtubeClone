@@ -5,7 +5,7 @@ export default function ProfileAbout({channel , Views}) {
   return (
     <div className='ProfileAbout'>
         <div className="ProfileAboutContainer">
-            <span className="Channeldesc"> Description <ul/> </span>
+            <span className="Channeldesc"> Description </span>
             <div className="DescriptionChannel">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque corrupti distinctio, vero itaque nam accusantium eius quos! Tempore, similique enim.</div>
         </div>
         <div className="ProfileAboutStats">

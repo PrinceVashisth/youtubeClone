@@ -13,3 +13,19 @@
 .ReportedVideo::-webkit-scrollbar-track{
     color: aquamarine;
 }
+
+@media screen and (max-width:650px){
+    /* .likeVideoContainer{
+      gap: 5px;
+    } */
+    .ReportedVideo {
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+      height: calc(100vh - 50px);
+  }
+  .ReportedVideo::-webkit-scrollbar{
+    width: 0px;
+  }
+  }

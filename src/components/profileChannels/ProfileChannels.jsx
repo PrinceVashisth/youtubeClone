@@ -6,7 +6,7 @@ export default function ProfileChannels({channel}) {
     <div className='ProfileChannel'>
        <div className="ProfileChannelImg">
        <Link to={`/profile/${channel.channelName}`}>
-            <img src={`${channel.channelImg}`} alt="" />
+            <img src={`http://localhost:3000/assets/${channel.channelImg}`} alt="" />
        </Link>
        </div>
        <div className="ProfilechannelName">{channel.channelName}</div>

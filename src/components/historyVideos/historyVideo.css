@@ -3,6 +3,7 @@
   flex-direction: column;
   overflow-x: scroll;
   flex: 10;
+  gap: 15px;
 }
 .HistoryContainer::-webkit-scrollbar{height: 1px;}
 .HistoryContainer::-webkit-scrollbar-thumb{background-color: aqua;}
@@ -28,7 +29,7 @@
 .historyVideos{
     overflow-x: scroll;
     display: flex;
-    margin: 0px 10px;
+    padding: 0px 10px;
     height: 450px;
 }
 
@@ -43,4 +44,20 @@
 
 .historyVideos::-webkit-scrollbar-track{
 color: blue;
+}
+
+@media screen and (max-width:650px){
+  .HistoryContainer{
+    gap: 5px;
+  }
+  .historyVideos {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    height: calc(100vh - 100px);
+}
+.historyVideos::-webkit-scrollbar{
+  width: 0px;
+}
 }

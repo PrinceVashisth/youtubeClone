@@ -9,14 +9,13 @@ import { GrDislike, GrLike } from 'react-icons/gr';
 import {GoReport } from 'react-icons/go';
 export default function CurrentVideo({Video}){
   const user = useSelector((state)=>state.user.userInfo);
-  const [Playing,setPlaying] = useState(false);
 const [Channel,setChannel] = useState({});
 const [subscriber,setSubscriber]=useState(false);
 const [subscriberbtn,setSubscriberbtn]=useState(false);
 useEffect(()=>{
      setSubscriber(false);
   const fetchChannel = async()=>{
-     const res = await axios.get(`/channel?userId=${Video.userId}`); 
+     const res = await axios.get(`channel?userId=${Video.userId}`); 
      setChannel(res.data);
      setSubscriber(true);
      setSubscriberbtn(user?res.data.subscribers.includes(user._id)?true:false:false);
@@ -24,17 +23,16 @@ useEffect(()=>{
   fetchChannel();
   
 },[Video,subscriberbtn]);
-console.log(Video);
 // Handellers
 const SubscribeHandeller = async()=>{
-     await axios.put(`/user/${Channel._id}`,{userId:user._id});
+     await axios.put(` user/${Channel._id}`,{userId:user._id});
      setSubscriberbtn(!subscriberbtn);
 }
 const LikeHandeller=async()=>{
-     await axios.put(`/user/like/${Video._id}`,{userId:user._id});
+     await axios.put(` user/like/${Video._id}`,{userId:user._id});
 }
 const ReportsHandeller=async()=>{
-  await axios.put(`/user/report/video/${Video._id}`,{userId:user._id});
+  await axios.put(` user/report/video/${Video._id}`,{userId:user._id});
 }
 
 const likeBtn={

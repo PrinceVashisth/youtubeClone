@@ -1,5 +1,5 @@
 .SkeletonVideo{
-  width: 20vw;
+  width: 299px;
   height: 300px;
   margin: 30px 5px;
   position: relative;
@@ -14,7 +14,7 @@
 }
 
 .imgVideoSkeleton{
-  width: 20vw;
+  width: 299px;
   height: 200px;
   background-color: rgb(175, 159, 159);
 }
@@ -54,4 +54,16 @@
   width: 90px;
   height: 10px;
   background-color:rgb(56, 53, 53);
+}
+
+.descTopSkeleton{
+  display: flex;
+  align-items: center;
+}
+
+.descBottomSkeleton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 60px;
 }

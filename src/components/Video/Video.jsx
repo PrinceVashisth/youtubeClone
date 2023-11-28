@@ -37,12 +37,9 @@ const shareHandeller=async()=>{
   await axios.post(``);
 }
 
-
 const WatchHandeller=async()=>{
   await axios.post(``);
 }
-
-
 
   return (
     <>
@@ -51,7 +48,7 @@ const WatchHandeller=async()=>{
         <span className="timing">2:30</span>
         <div className="videoDesc">
           <div className="descTop">
-          <img src={`${channel.channelImg}`} alt="" className="channelImg" />
+          <img src={`assets/${channel.channelImg}`} alt="" className="channelImg" />
           <span className="titleOfVideo">
             {props.title}
           </span>

@@ -47,3 +47,22 @@
     background-color: rgb(210, 232, 224);
     margin: 10px 30px;  
 }
+
+@media screen and (max-width:1200px) {
+    .recommendedvideoSkeleton{
+        width: 300px;
+    }
+    
+}
+
+@media screen and (max-width:1200px) {
+    .recommendedSkeletonWrapper{
+        align-items: flex-end;
+    }    
+}
+
+@media screen and (max-width:700px){
+
+
+    
+}

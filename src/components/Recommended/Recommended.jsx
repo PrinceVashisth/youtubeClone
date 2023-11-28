@@ -9,7 +9,7 @@ export default function Recommended({cid}) {
    const [Videos,setVideos] = useState([]);
 useEffect(()=>{
   const fetchchannel = async()=>{
-     const res =  await axios.get(`/videos/video/recommended/${cid}`);
+     const res =  await axios.get(` videos/video/recommended/${cid}`);
     setVideos(res.data.flat());
    }
    fetchchannel();

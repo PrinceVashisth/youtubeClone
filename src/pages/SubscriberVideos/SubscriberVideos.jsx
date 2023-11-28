@@ -14,7 +14,7 @@ export default function SubscriberVideos() {
   const [Skeleton,setSkeleton] = useState(true);
 useEffect(()=>{
     const fetchAllSubsVideo = async()=>{
-     const res = await axios.get(`/videos/AllSubscribersVideo/${user._id}`);
+     const res = await axios.get(` videos/AllSubscribersVideo/${user._id}`);
      setVideo(res.data.flat());
      setSkeleton(false);
     }
@@ -28,7 +28,11 @@ useEffect(()=>{
           <Sidebar/>
            <div className="SubscriberContainer">
              <div className="SubscriberWrapper">
-                {Skeleton?<LoadingScreen key={1}/>:video.map((v)=>(<Video key={v._id} props={v}/>))}
+                {Skeleton?<LoadingScreen key={1}/>:video.map((v)=>(
+                  <div style={{ minWidth:'300px'}}>
+                  <Video key={v._id} props={v}/>
+                  </div>
+                  ))}
              </div>
            </div>
         </div>

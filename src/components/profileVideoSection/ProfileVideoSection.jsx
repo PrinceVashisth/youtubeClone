@@ -12,13 +12,16 @@ useEffect(()=>{
  const fetchVideos =async()=>{
    const res = await axios.get(`/videos/subsVideo/${channelName}`);
    SetVideos(res.data);
+   console.log(res.data);
    setSkeleton(false);
  }
  fetchVideos();
 },[channelName]); 
   return (
     <div className='ProfileVideoSection'>
-      {Skeleton?<LoadingScreen/>:Videos.map((V)=>(<Video key={V._id} props={V}/>))}
+      {Skeleton?<LoadingScreen/>:Videos.map((V)=>(
+        <Video key={V._id} props={V}/>
+        ))}
     </div>
   )
 }

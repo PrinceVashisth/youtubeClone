@@ -8,18 +8,16 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import './Explore.css';
 
 export default function Explore() {
+  // {skeleton?<LoadingScreen/>:Video.map((V)=>(<ExploreVideos key={V._id} video={V} />))}
 
   const [skeleton,setSkeleton] = useState(true);
   const user = useSelector((state)=>state.user.userInfo);
   const [Video,setVideo] = useState([]);
   useEffect(()=>{
     setSkeleton(true);
-    const fetchVideos=async()=>{
-      const videos = await axios.get();
-      setVideo(videos.data);
-    }  
-    fetchVideos();
-    // setSkeleton(true);
+    setTimeout(() => {
+      setSkeleton(false);
+    }, 1000);
   },[user]);
 
   return (
@@ -28,10 +26,9 @@ export default function Explore() {
      <div className="mainContent">
         <Sidebar/>
         <div className="ExploreWrapper">
-       {skeleton?<LoadingScreen/>:Video.map((V)=>(<ExploreVideos key={V._id} video={V} />))}
-        </div>
-
-        </div>
-   </>
-  )
-}
+       {skeleton?<LoadingScreen/>: <img src="assets/UnderconstructionLayout.jpg" style={{width:'100%',height:'100%' }}/> }
+       </div>
+       </div>
+       </>
+       )
+      }

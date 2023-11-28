@@ -16,7 +16,7 @@ const [Video,setVideo] = useState({});
 
 useEffect(()=>{
    const fetchVideo=async()=>{
-    const V = await axios.get(`/videos/video/${id}`);
+    const V = await axios.get(` videos/video/${id}`);
     setVideo(V.data);
     setSkeleton(true);
     setRecommended(true);

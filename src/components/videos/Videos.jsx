@@ -14,11 +14,11 @@ useEffect(()=>{
  const VideosHandeller=async()=>{
     const res =  user ? await axios.get(`/videos/all/UserPresent?userId=${user._id}`):await axios.get(`/videos/all`);
     setvideos(res.data.sort((a,b)=> new Date(b.createdAt) - new Date(a.createdAt)));
+    console.log("videos=> ",res.data);
   }
   setSkeleton(!Skeleton);
   VideosHandeller();
 },[]);
-
 
   return (
     <div className='videos'>

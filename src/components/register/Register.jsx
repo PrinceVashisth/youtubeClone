@@ -6,6 +6,7 @@ import { useState } from 'react';
 import   axios  from 'axios';
 // import Cloudinary from '../Cloudinary';
 export default function Register() {
+  const file = useRef(null);
     const name = useRef('');
     const age = useRef(null);
     const email = useRef('');
@@ -25,7 +26,6 @@ export default function Register() {
       data.append("cloud_name","dnkd8ncit");
 
       const respo = await axios.post("https://api.cloudinary.com/v1_1/dnkd8ncit/image/upload",data);
-      
       console.log(respo.data.secure_url);
       const img = respo.data.secure_url;
        const UserCredencials={
@@ -42,16 +42,15 @@ export default function Register() {
     }
   return (
     <>
-      <div className="registerImg">
-        <img src="assets/registerImg.png" alt="" className='sideImg'/>
-      </div> 
+        <img src="assets/loginScreen.jpg" alt="" className='sideImg'/>
         <form onSubmit={RegisterHandeller} className='register'>
             <input type="text" placeholder='Enter Your Name' ref={name} className='registerField' required/>
             <input type="email" placeholder='Enter Your Email' ref={email} className='registerField' required/>
             <input type="number" placeholder='Enter Your age' ref={age} className='registerField' required/>
             <input type="password" min={8} placeholder='Enter Your Password' ref={password} className='registerField' required/>
             <input type="password" placeholder='Enter Your Password Again' ref={confirmpassword} className='registerField' required/>
-            <input type="file" onChange={(event)=>{SetImage(event.target.files[0])}}/>
+            <input type="file" onChange={(event)=>{SetImage(event.target.files[0])}} ref={file} hidden/>
+            <div onClick={()=>{file.current.click()}} className='RegisterUpload' >upload Image</div>
             <button type="submit" className='RegisterBtn'>{user.pending?"Loading":"Register" }</button>
         </form>
     </>

@@ -1,6 +1,7 @@
 .VideoPlayContainer{
     margin: 15px;
     display: flex;
+    gap: 10px;
 }
 
 .videoPlayer{
@@ -11,6 +12,7 @@
     flex: 3;
     height: calc(100vh - 80px);
     overflow-y: scroll;
+    min-width: 405px;
 }
 
 .recommendationVideoBar::-webkit-scrollbar{
@@ -21,4 +23,26 @@
 }
 .recommendationVideoBar::-webkit-scrollbar-track{
     background-color: white;
+}
+
+@media screen and (max-width:1200px){
+    .VideoPlayContainer{
+        margin: 10px;
+    }
+    .recommendationVideoBar{
+        flex: 2.5;
+        min-width: 305px;
+    }
+    
+}
+
+@media screen and (max-width:1050px){
+    .VideoPlayContainer{
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width:700px){
+
 }

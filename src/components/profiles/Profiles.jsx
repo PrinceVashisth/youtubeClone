@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fulfilled } from "../../counter/counterSlice";
@@ -14,6 +14,7 @@ import CreateVideo from "../createVideo/CreateVideo";
 
 // if users go to his Profile
 export const ProfileUser=()=>{
+  const file = useRef(null);
   const {_id,...others} = useSelector((state)=>state.user.userInfo);
   const [Skeleton,SetSkeleton] = useState(true);
   const [Channel,SetChannel] = useState([]);
@@ -23,7 +24,6 @@ export const ProfileUser=()=>{
   const ChannelType = useRef();
 
   const CreateChannel = async(e)=>{
-
   e.preventDefault();
   const data = new FormData();
   data.append("file",image);
@@ -37,8 +37,6 @@ export const ProfileUser=()=>{
   channelImg :img,
 }
     const res = await axios.post(`/channel/${_id}`,Data);
-    console.log(res.data);
-    
     setToggle(false);
  }
 
@@ -51,31 +49,32 @@ export const ProfileUser=()=>{
     fetchUserChannels();
   },[Channel]);
   return(
-    <>
+    <React.Fragment>
       <div className="ChannelCreate">
          <button className="ChannelBtn">
            <span> Create Channel </span>
            <MdCreateNewFolder style={{ color:"#cad9f5" ,cursor:"pointer"}} onClick = {()=>{setToggle(true)}} />
          </button>
          <div className= {Toggle?"Channelactive":"popUp"}>
-           <ImCross style={{marginLeft:"auto" , color:"white",cursor:"pointer"}} onClick = {()=>{setToggle(false)}} />
+           <div className="togglechannel">
+           <ImCross style={{float:"right" , color:"white",cursor:"pointer"}} onClick = {()=>{setToggle(false)}} />
           <form className="ChannelForm" action="" method="" onSubmit={CreateChannel}>
               <input type="text" placeholder="Channel Name" ref={ChannelName} />
               <input type="text" placeholder="Channel Type" ref={ChannelType}/>
-                <input type="file" onChange={(event)=>{Setimage(event.target.files[0])}} />
-                
+                <input type="file" onChange={(event)=>{Setimage(event.target.files[0])}} ref={file} hidden />
+                <div className="UploadFile" onClick={()=>{file.current.click()}}> Channel Img </div>
                 <button type="submit"> Done </button>
          </form>
+         </div>
          </div>
       </div>
     <div className='ProfileChannelSection'>
     {Skeleton?<ChannelSkeleton/>:Channel.map((channel)=>(<ProfileChannels key={channel._id} channel={channel} />))}
    </div>  
-    </>
+    </React.Fragment>
   )
 }
 
-//  other users profile 
 export const ProfileChannel = ({channelName})=>{
     const user = useSelector((state)=>state.user.userInfo); 
     const [channel,setChannel] = useState([]);
@@ -84,9 +83,11 @@ export const ProfileChannel = ({channelName})=>{
     const dispatch = useDispatch();
      useEffect(()=>{
        const fetchChannel=async()=>{
+
            const res = await axios.get(`/channel?name=${channelName}`);
            setChannel(res.data);
            SetSubscribeBtn(user?res.data.subscribers.includes(user._id)?true:false:false);
+           console.log("Channel =>",res.data,channelName);
            SetShow(false);
        }
        fetchChannel();
@@ -104,10 +105,10 @@ const ProfileHeader = ()=>{
   return(
   <div className="profileheader">
   <div className="profileimg">
-      <img src={`${channel.channelImg}`} alt="" className='CoverProfileImg'/>
+      <img src={`http://localhost:3000/assets/${channel.channelImg}`} alt="" className='CoverProfileImg'/>
   </div>
   <div className="profilepanel">
-  <img src={`${channel.channelImg}`} alt="" className='ProfileImg'/>
+  <img src={`http://localhost:3000/assets/${channel.channelImg}`} alt="" className='ProfileImg'/>
        <div className="Aboutchannel">
        <div className="channelName">{channelName}</div>
        <div className="subscribers">{ Show?" ":channel.subscribers.length}  subscribers </div>
@@ -124,7 +125,7 @@ const ProfileNavbar = ()=>{
      SetValue(e.target.innerHTML);
   }
   return(
-    <>
+    <React.Fragment>
           <div className="profileNavbar">
             <div className="profileItems" onClick={ProfileBottomHandeller}>
               <div className="profileItem">Home</div>
@@ -134,15 +135,15 @@ const ProfileNavbar = ()=>{
             </div>
           </div>  
           <BottomProfile props={Value}/> 
-    </>
+    </React.Fragment>
   )
 }
 
 return(
-      <>
+      <React.Fragment>
         <ProfileHeader/>
         <ProfileNavbar/>
-       </>   
+       </React.Fragment>   
     )
 }
 

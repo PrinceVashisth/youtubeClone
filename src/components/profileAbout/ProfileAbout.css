@@ -12,6 +12,7 @@
 }
 
 .Channeldesc{
+  color: #47484e;
    font-size: 1.4rem;
    font-weight: 700;
 }
@@ -27,4 +28,44 @@
     margin-top: 50px;
     padding-left: 80px;
     height: 100px;
+}
+.stats{
+  color: #47484e;
+}
+@media screen and (max-width:850px){
+  .ProfileAbout{
+    height: 250px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:500px){
+  .ProfileAbout{
+    height: 280px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ProfileAboutContainer {
+    width: 80%;
+    margin-top: 30px;
+}
+.ProfileAboutStats {
+    width: 80%;
+    margin-top: 10px;
+    height: 100px;
+    padding: 0;
+}
+}
+
+@media screen and (max-width:400px){
+  .ProfileAboutContainer {
+    width: 95%;
+    margin-top: 30px;
+}
+.ProfileAboutStats {
+    width: 95%;
+    margin-top: 10px;
+    height: 100px;
+    padding: 0;
+}
 }

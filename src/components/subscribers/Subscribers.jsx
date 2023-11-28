@@ -3,7 +3,7 @@ import './subscribers.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-export default function Subscribers({users}) {
+export default function Subscribers({users,toggle}) {
 
 const [channel,setchannel] = useState([]);
 useEffect(()=>{
@@ -17,9 +17,9 @@ useEffect(()=>{
   return (
     <>  
     <Link to={`/profile/${channel.channelName}`} style={{textDecoration:'none',color:'black'}}>
-        <li className="itemSubscription">
-            <img src={`${channel.channelImg}`} alt="img" className="subscriptionLogo" />
-            <span className="subscriptionName">{channel.channelName}</span>
+        <li className={toggle?"itemSubscription minItemSubs":"itemSubscription"}>
+            <img src={`assets/${channel.channelImg}`} alt="img" className={toggle?"subscriptionLogo minSubscriptionLogo":"subscriptionLogo"} />
+            <span className={toggle?"minSubsName":"subscriptionName"}>{channel.channelName}</span>
         </li>
     </Link>
     </>

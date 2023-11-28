@@ -1,5 +1,23 @@
 .ProfileVideoSection{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     
+}
+
+@media screen and (max-width:1300px) {
+    .ProfileVideoSection{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .ProfileVideoSection{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .ProfileVideoSection{
+        grid-template-columns: 1fr;
+    }
 }

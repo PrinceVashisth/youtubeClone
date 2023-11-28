@@ -1,103 +1,118 @@
-
 .video{
-    width: 300px;
-    height: 300px;
-    margin: 30px 5px;
-    position: relative;
-  }
-  
-  .imgVideo{
-    width: 300px;
-    height: 220px;
-  }
-  
-  .timing {
-    top: 180px;
-    right: 20px;
-    position: absolute;
-    background: #000;
-    color: #fff;
-    font-size: 10px;
-    padding: 5px;
-  }
-  
-  .descTop{
-    display: flex;
-  }
+  margin: 30px 5px;
+  position: relative;
+}
 
-  .MoreDetailsInVideo{
-    position: relative;
-    margin-left: auto;
-  }
-  
-  .moreDetails{
-    margin-top: 10px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
+.imgVideo{
+  width: 100%;
+  height: 220px;
+}
 
- .VideoOptions{
+.timing {
+  top: 180px;
+  right: 20px;
   position: absolute;
-  left: -180px;
-  background-color: rgb(128, 22, 22);
-  width: 200px;
-  text-align: center;
-  z-index: 999;
-  visibility: hidden;
-  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 5px;
+}
+
+.descTop{
+  display: flex;
+  align-items: center;
+}
+
+.MoreDetailsInVideo{
+  position: relative;
+  margin-left: auto;
+}
+
+.moreDetails{
+  margin-top: 0px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.VideoOptions{
+position: absolute;
+left: -180px;
+background-color: rgb(128, 22, 22);
+width: 200px;
+text-align: center;
+z-index: 999;
+visibility: hidden;
+border-radius: 5px;
 }  
 .MoreDetailsInVideo:hover .VideoOptions{
-  transition: all ease 0.5s;
-  visibility: visible;
- }
+transition: all ease 0.5s;
+visibility: visible;
+}
 
- .optionItem{
-    padding: 8px 0;
-    color: antiquewhite;
-    cursor: pointer;
- }
+.optionItem{
+  padding: 8px 0;
+  color: antiquewhite;
+  cursor: pointer;
+}
 .VideoOptions .optionItem:hover{
-  transition: all ease 0.5s;
-  background-color: blueviolet;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
- }
+transition: all ease 0.5s;
+background-color: blueviolet;
+color: #fff;
+font-size: 18px;
+font-weight: 600;
+}
 
-  .channelImg{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 0 10px;
-    cursor: pointer;
+.channelImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.descBottom{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+.titleOfVideo{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.videoDetails{
+  display: flex;
+  align-items: center;
+}
+
+.sep{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin: 3px 5px;
+ background-color: grey;
+}
+
+.labelName,.views{
+  font-size: 13px;
+  color: rgb(128, 124, 124);
+  cursor: pointer;
+}
+
+@media screen and (max-width:650px){
+  .video{
+    margin: 5px 5px 20px 5px;
+    position: relative;
   }
-  
-  .descBottom{
+  .descTop{
     display: flex;
-    flex-direction: column;
+    align-items:initial;
+  }
+
+  .descBottom{
+   position: absolute;
+   bottom: -15px;
     margin-left: 60px;
   }
-  
-  .titleOfVideo{
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  .videoDetails{
-    display: flex;
-    align-items: center;
-  }
-
-  .sep{
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    margin: 3px 5px;
-   background-color: grey;
-  }
-
-  .labelName,.views{
-    font-size: 13px;
-    color: rgb(128, 124, 124);
-    cursor: pointer;
-  }
+}

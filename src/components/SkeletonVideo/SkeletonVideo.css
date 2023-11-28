@@ -55,3 +55,12 @@
     height:10px;
     background-color: grey;
 }
+
+@media screen and (max-width:700px){
+    .playerVideo{
+        height: 50vh;
+    }
+    .skeletonVideo{
+        height: 100%; 
+    }
+}

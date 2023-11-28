@@ -1,6 +1,6 @@
 .videos{
   flex: 10;
-  height: calc(100vh - 50px );
+  height: calc(100vh - 50px);
   background-color: rgb(251, 251, 251);
   overflow-y: scroll;
 }
@@ -18,8 +18,25 @@ background-color: #fff;
 }
 
 .videosWrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width:1470px){
+  .videosWrapper{
+    grid-template-columns:1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width:1100px){
+  .videosWrapper{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media screen and (max-width:650px){
+  .videosWrapper{
+    grid-template-columns:1fr;
+  }
+
 }

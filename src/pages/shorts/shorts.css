@@ -1,0 +1,11 @@
+.ShortsWrapper{
+    flex: 11;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - 50px );
+    overflow-y: scroll;
+}
+
+.ShortsWrapper::-webkit-scrollbar{
+    width: 0px;
+}

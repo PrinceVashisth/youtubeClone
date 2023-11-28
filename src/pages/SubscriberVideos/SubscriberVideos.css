@@ -4,10 +4,29 @@
     overflow-y: scroll;
 }
 .SubscriberWrapper{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
 }
+
 
 .SubscriberContainer::-webkit-scrollbar{
     width: 0px;
+}
+
+@media screen and (max-width:1430px){
+    .SubscriberWrapper{
+        grid-template-columns: 1fr 1fr 1fr;
+    } 
+}
+
+@media screen and (max-width:1130px){
+    .SubscriberWrapper{
+        grid-template-columns: 1fr 1fr;
+    } 
+}
+@media screen and (max-width:600px){
+    .SubscriberWrapper{
+        grid-template-columns: 1fr;
+    }   
 }
