@@ -12,7 +12,7 @@ export default function ProfileChannelSection() {
   const [Channel,SetChannel] = useState([]);
   useEffect(()=>{
    const fetchUserChannels = async()=>{
-      const res = await axios.get(`/user/getAllChannels/${channelName}`);
+      const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/user/getAllChannels/${channelName}`);
       SetChannel(res.data);
       console.log("Som=>",res.data);
       SetSkeleton(false);

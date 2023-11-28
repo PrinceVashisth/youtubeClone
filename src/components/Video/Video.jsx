@@ -11,14 +11,14 @@ const user = useSelector((state)=>state.user.userInfo);
 const [channel,setChannel]= useState({});
   useEffect(()=>{
     const FetchChennel=async()=>{
-     const res = await axios.get(`/channel?userId=${props.userId}`);
+     const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel?userId=${props.userId}`);
      setChannel(res.data);
     }
     FetchChennel();
    },[props]);
 
 const ViewsHandeller=async()=>{
-  user ?await axios.put(`/user/video/${props._id}`,{userId:user._id}): await axios.put(`/user/video/${props._id}`,{userId:user});
+  user ?await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${props._id}`,{userId:user._id}): await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${props._id}`,{userId:user});
 }
 
 
@@ -28,7 +28,7 @@ const AddLibraryHandeller=async()=>{
 
 
 const ReportHandeller=async()=>{
- const res = await axios.put(`/user/report/video/${props._id}`,{userId:user._id});
+ const res = await axios.put(`https://yt-clone-vciw.onrender.com/api/user/report/video/${props._id}`,{userId:user._id});
  console.log(res.data);
 }
 

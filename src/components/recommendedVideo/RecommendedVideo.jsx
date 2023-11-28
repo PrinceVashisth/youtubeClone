@@ -9,7 +9,7 @@ const user = useSelector((state)=>state.user.userInfo);
 const [channel,setChannel]= useState([]);
 useEffect(()=>{
     const fetchChannel = async()=>{
-     const res = await axios.get(`/channel?userId=${video.userId}`);
+     const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel?userId=${video.userId}`);
      setChannel(res.data);
     } 
     fetchChannel();  
@@ -17,10 +17,10 @@ useEffect(()=>{
 
 const viewHandeller = async()=>{
   if(user){
-     await axios.put(`/user/video/${video._id}`,{userId:user._id});
+     await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${video._id}`,{userId:user._id});
     
   }else{
-     await axios.put(`/user/video/${video._id}`,{userId:user});
+     await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${video._id}`,{userId:user});
   }
   // window.location.reload();
 }

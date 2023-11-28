@@ -26,7 +26,7 @@ const actionPerform =()=>{
 useEffect(()=>{
   const fetchVideos = async()=>{
     if(SearchItem !== ""){
-      const res = await axios.get(`/user/search/${SearchItem}`);
+      const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/user/search/${SearchItem}`);
       SetVideos(res.data);
     }else{
       SetVideos([]);

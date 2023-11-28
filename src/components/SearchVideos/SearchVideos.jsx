@@ -6,7 +6,7 @@ import './searchVideos.css';
 export default function SearchVideos({Video}) {
 const user = useSelector((state)=>state.user.userInfo);
   const viewHandeller=async()=>{
- const res = user?await axios.put(`/user/video/${Video._id}`,{userId:user._id}):await axios.put(`/user/video/${Video._id}`,{userId:user});
+ const res = user?await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${Video._id}`,{userId:user._id}):await axios.put(`https://yt-clone-vciw.onrender.com/api/user/video/${Video._id}`,{userId:user});
 }
 
   return (

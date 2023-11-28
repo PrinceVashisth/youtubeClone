@@ -12,13 +12,13 @@ export default function ProfileAboutSection() {
 
  useEffect(()=>{
   const fetchChannel =async()=>{
-  const res = await axios.get(`/channel/?name=${channelName}`);
+  const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel/?name=${channelName}`);
   SetChannel(res.data);
   } 
   fetchChannel();
 
   const fetchLikes = async()=>{
-    const res = await axios.get(`/channel/channelLikes/${channelName}`);
+    const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel/channelLikes/${channelName}`);
    Setviews(res.data.flat());
   }
   fetchLikes();
