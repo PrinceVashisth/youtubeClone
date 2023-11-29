@@ -48,7 +48,7 @@ const WatchHandeller=async()=>{
         <span className="timing">2:30</span>
         <div className="videoDesc">
           <div className="descTop">
-          <img src={`assets/${channel.channelImg}`} alt="" className="channelImg" />
+          <img src={`${channel.channelImg}`} alt="" className="channelImg" />
           <span className="titleOfVideo">
             {props.title}
           </span>
