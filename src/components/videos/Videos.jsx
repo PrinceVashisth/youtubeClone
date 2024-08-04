@@ -12,7 +12,7 @@ const [Skeleton,setSkeleton] = useState(true);
 
 useEffect(()=>{
  const VideosHandeller=async()=>{
-    const res =  user ? await axios.get(`https://yt-clone-vciw.onrender.com/api/videos/all/UserPresent?userId=${user._id}`):await axios.get(`https://yt-clone-vciw.onrender.com/api/videos/all`);
+    const res =  user ? await axios.get(`https://youtube-api-1.onrender.com/api/videos/all/UserPresent?userId=${user._id}`):await axios.get(`https://youtube-api-1.onrender.com/api/videos/all`);
     setvideos(res.data.sort((a,b)=> new Date(b.createdAt) - new Date(a.createdAt)));
     console.log("videos=> ",res.data);
   }

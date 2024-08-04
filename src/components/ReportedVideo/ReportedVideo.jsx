@@ -12,7 +12,7 @@ export default function ReportedVideo() {
  useEffect(()=>{
    SetSkeleton(true);
     const fetchReportedVideos =async()=>{
-     const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/user/seeReports/Videos/${user._id}`);
+     const res = await axios.get(`https://youtube-api-1.onrender.com/api/user/seeReports/Videos/${user._id}`);
      setVideos(res.data);
      SetSkeleton(false);
     } 

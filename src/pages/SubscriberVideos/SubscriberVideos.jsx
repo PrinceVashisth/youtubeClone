@@ -14,7 +14,7 @@ export default function SubscriberVideos() {
   const [Skeleton,setSkeleton] = useState(true);
 useEffect(()=>{
     const fetchAllSubsVideo = async()=>{
-     const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/videos/AllSubscribersVideo/${user._id}`);
+     const res = await axios.get(`https://youtube-api-1.onrender.com/api/videos/AllSubscribersVideo/${user._id}`);
      setVideo(res.data.flat());
      setSkeleton(false);
     }

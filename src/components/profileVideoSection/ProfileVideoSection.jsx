@@ -10,7 +10,7 @@ export default function ProfileVideoSection() {
  const [Videos,SetVideos] = useState([]);
 useEffect(()=>{
  const fetchVideos =async()=>{
-   const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/videos/subsVideo/${channelName}`);
+   const res = await axios.get(`https://youtube-api-1.onrender.com/api/videos/subsVideo/${channelName}`);
    SetVideos(res.data);
    console.log(res.data);
    setSkeleton(false);

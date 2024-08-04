@@ -8,7 +8,7 @@ export default function Subscribers({users,toggle}) {
 const [channel,setchannel] = useState([]);
 useEffect(()=>{
   const fetchChannel=async()=>{
-   const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel?userId=${users}`);
+   const res = await axios.get(`https://youtube-api-1.onrender.com/api/channel?userId=${users}`);
    setchannel(res.data);
   }
   fetchChannel();

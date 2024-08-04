@@ -14,7 +14,7 @@ const Catagory = useParams().catagory;
     const [skeleton,SetSkeleton] = useState(true);
 useEffect(()=>{
   const fetchMovies = async()=>{
-  const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/videos/video/selectedCatagory/${Catagory}`);
+  const res = await axios.get(`https://youtube-api-1.onrender.com/api/videos/video/selectedCatagory/${Catagory}`);
   setCatagoryies(res.data.flat());
   SetSkeleton(false);
   }

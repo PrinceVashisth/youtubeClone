@@ -36,13 +36,13 @@ export const ProfileUser=()=>{
   ctype : ChannelType.current.value,
   channelImg :img,
 }
-    const res = await axios.post(`https://yt-clone-vciw.onrender.com/api/channel/${_id}`,Data);
+    const res = await axios.post(`https://youtube-api-1.onrender.com/api/channel/${_id}`,Data);
     setToggle(false);
  }
 
   useEffect(()=>{
     const fetchUserChannels = async()=>{
-      const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/user/findChannels/User/Channel/${_id}`);
+      const res = await axios.get(`https://youtube-api-1.onrender.com/api/user/findChannels/User/Channel/${_id}`);
       SetChannel(res.data);
       SetSkeleton(false);
     }
@@ -84,7 +84,7 @@ export const ProfileChannel = ({channelName})=>{
      useEffect(()=>{
        const fetchChannel=async()=>{
 
-           const res = await axios.get(`https://yt-clone-vciw.onrender.com/api/channel?name=${channelName}`);
+           const res = await axios.get(`https://youtube-api-1.onrender.com/api/channel?name=${channelName}`);
            setChannel(res.data);
            SetSubscribeBtn(user?res.data.subscribers.includes(user._id)?true:false:false);
            console.log("Channel =>",res.data,channelName);
@@ -94,9 +94,9 @@ export const ProfileChannel = ({channelName})=>{
     },[channelName,Subscribebtn]);
 
 const subscriberHandeller=async()=>{ 
-  await axios.put(`https://yt-clone-vciw.onrender.com/api/user/${channel._id}`,{userId:user._id});
+  await axios.put(`https://youtube-api-1.onrender.com/api/user/${channel._id}`,{userId:user._id});
   SetSubscribeBtn(!Subscribebtn);
-  const User = await axios.get(`https://yt-clone-vciw.onrender.com/api/user/${user._id}`);
+  const User = await axios.get(`https://youtube-api-1.onrender.com/api/user/${user._id}`);
   localStorage.setItem("User",JSON.stringify(User.data));
   dispatch(fulfilled(User.data));
 }     
